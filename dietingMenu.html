@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Foods</title>
+<style>
+    .defaultTextBubble {
+      margin: auto;
+      width: 30%;
+      background-color: #a3a3a3;
+      color: #ffffff;
+      padding: 20px;
+      text-align:center;
+      border-radius: 25px;
+      font-size: 200%;
+      font-family:verdana;
+    }
+</style>
+</head>
+
+<body>
+ 
+</body>
+
+<p> Food you ate: <input type = "text"> </p>
+<input type="submit" value="Submit">
+</p/p> The foods calories: <input tpye = "text"> </p>
+<input type="submit" value="Submit">
+<script>
+  function addFood() {
+      var foodInput = document.getElementById("foodInput").value;
+      if (foodInput.trim() !== "") {
+        // Process the entered food
+        console.log("Food: " + foodInput);
+
+        // Clear the input field
+        document.getElementById("foodInput").value = "";
+      }
+    }
+
+</script>
+
+
+</html>
