@@ -16,12 +16,21 @@
     }
   </style>
 </head>
-
 <body>
 
+  <div class="defaultTextBubble">
+    <p> Food you ate: <input type="text" id="food"> </p>
+    <input type="button" value="Submit" onclick="addFood()">
+    <p> Calories: <input type="text" id="calories"> </p>
+    <input type="button" value="Submit" onclick="totalCalories()">
+  </div>
+  
+  
+ <!--
 <h1>Foods</h1/h1>
 <p id = "food"></p/p>
 <p id = "calories"></p>
+-->
 <script>
 function addFood(){
   let food;
@@ -54,6 +63,8 @@ function totalCalories(totalcal){
   document.getElementById("calories").innerHTML = "The total Calories is " + totalcal;
   console.log(JSON.stringify(totalcal));
 }
+
+
 window.onload = function(){
   
   totalCalories(addFood());
@@ -61,33 +72,6 @@ window.onload = function(){
 
 
 </script>
-
-</body>
-</html>
-    function addCalories() {
-      var caloriesInput = document.getElementById("caloriesInput").value;
-      if (caloriesInput.trim() !== "") {
-        // Process the entered calories
-        console.log("Calories: " + caloriesInput);
-
-        // Clear the input field
-        document.getElementById("caloriesInput").value = "";
-      }
-    }
-
-    // Continuously prompt for food input until a blank line is submitted
-    function startFoodEntry() {
-      var food = prompt("Enter the food you ate:");
-      while (food !== null && food.trim() !== "") {
-        // Process the entered food
-        console.log("Food: " + food);
-        food = prompt("Enter the food you ate:");
-      }
-    }
-
-    // Uncomment the line below to start the food entry prompt
-    // startFoodEntry();
-  </script>
 </body>
 
 </html>
