@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Foods</title>
-<style>
+  <title>Foods</title>
+  <style>
     .defaultTextBubble {
       margin: auto;
       width: 30%;
@@ -18,34 +18,50 @@
       align-items: center;
       font-family:verdana;
     }
-</style>
+  </style>
 </head>
 
 <body>
- 
-</body>
 
-<div class="defaultTextBubble">
-<p>Food</p>
-</div>
-
-<p> Food you ate: <input type = "text"> </p>
-<input type="submit" value="Submit">
-</p/p> The foods calories: <input tpye = "text"> </p>
-<input type="submit" value="Submit">
+<h1>Foods</h1/h1>
+<p id = "food"></p/p>
+<p id = "calories"></p>
 <script>
-  function addFood() {
-      var foodInput = document.getElementById("foodInput").value;
-      if (foodInput.trim() !== "") {
-        // Process the entered food
-        console.log("Food: " + foodInput);
+function addFood(){
+  let food;
+  let calories = 0;
+  let totalCalories = 0;
+  do {
+      food = prompt("What food did you eat?");
+      if (food != null) {
+        calories = prompt("How many calories does the food have?");
+        if (calories!= null) {
+          calories = parseInt(calories);
+        }
+        else{
+          calories = 0;
+        }
+        console.log(calories);
+        let parsedcalories = calories;
+        document.getElementById("food").innerHTML +=  "You entered " + food + ", which has " + calories + " calories.<br>";
+        totalCalories += parsedcalories;
+        calories += parsedcalories;
+        console.log(parsedcalories);
+        }
+        } while (food != null);
+        return totalCalories;
+}
 
-        // Clear the input field
-        document.getElementById("foodInput").value = "";
-      }
-    }
-
+  let totalcal = calories
+  console.log(calories);
+function totalCalories(totalcal){
+  document.getElementById("calories").innerHTML = "The total Calories is " + totalcal;
+  console.log(JSON.stringify(totalcal));
+}
+window.onload = function(){
+  
+  totalCalories(addFood());
+}
 </script>
-
-
+</body>
 </html>
